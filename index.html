@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loop 3 - Step 9</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+  <div class="top"></div>
+  <div class="middle">
+    <div class="obj">
+      <div class="head flex">
+        <div class="weather">
+          <div class="mon">
+            <ion-icon name="sunny-outline" class="bigger white"></ion-icon>
+            <p class="white bigger">25° C</p>
+          </div>
+          <div class="tue">
+            <ion-icon name="rainy-outline" class="white"></ion-icon>
+            <p class="white">day</p>
+            <p class="white">25°</p>
+          </div>
+          <div class="tue">
+            <ion-icon name="rainy-outline" class="white"></ion-icon>
+            <p class="white">day</p>
+            <p class="white">25°</p>
+          </div>
+          <div class="tue">
+            <ion-icon name="rainy-outline" class="white"></ion-icon>
+            <p class="white">day</p>
+            <p class="white">25°</p>
+          </div>
+        </div>
+        <div class="times">
+          <div class="data white">
+            <p>Monday</p>
+            <p>09 November</p>
+          </div>
+          <div class="time white">
+            11:32 <span class="intime">AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu flex">
+        <ion-icon name="laptop-outline" class="leftmenu"></ion-icon>
+        <div class="menus">
+          <div class="links">
+            <a href="#" class="link">News</a>
+            <a href="#" class="link">TV Shows</a>
+            <a href="#" class="link">Movies</a>
+            <a href="#" class="link">Sports</a>
+            <a href="#" class="link">Kids</a>
+          </div>
+          <div class="videos">
+            <div class="vid">
+              <div class="vid-img-wrapper">
+                <img class="videoimg" src="img/video-local-programming.jpg" alt="">
+                <div class="vid-overlay">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+              </div>
+              <p class="silver timetable">6.12AM - 12.00AM</p>
+              <p class="show">Local Programming</p>
+            </div>
+
+            <div class="vid">
+              <div class="vid-img-wrapper">
+                <img class="videoimg" src="img/video-family-guy.jpg" alt="">
+                <div class="vid-overlay">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+              </div>
+              <p class="silver timetable">6.12AM - 12.00AM</p>
+              <p class="show">Family Guy</p>
+            </div>
+
+            <div class="vid">
+              <div class="vid-img-wrapper">
+                <img class="videoimg" src="img/video-simpsons.jpg" alt="">
+                <div class="vid-overlay">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+              </div>
+              <p class="silver timetable">6.12AM - 12.00AM</p>
+              <p class="show">The Simpsons</p>
+            </div>
+
+            <div class="vid">
+              <div class="vid-img-wrapper">
+                <img class="videoimg" src="img/video-futurama.jpg" alt="">
+                <div class="vid-overlay">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+              </div>
+              <p class="silver timetable">6.12AM - 12.00AM</p>
+              <p class="show">Futurama</p>
+            </div>
+
+            <div class="vid">
+              <div class="vid-img-wrapper">
+                <img class="videoimg" src="img/video-american-dad.jpg" alt="">
+                <div class="vid-overlay">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+              </div>
+              <p class="silver timetable">6.12AM - 12.00AM</p>
+              <p class="show">American Dad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu flex">
+
+      <ion-icon name="musical-note-outline" class="leftmenu"></ion-icon>
+      <div class="menus flex">
+        <div class="menuss">
+          <div class="muzplace">
+            <div class="song" id="now-playing">
+              <img src="img/music-with-you.jpg" alt="" class="songimg" id="cover-image">
+              <div class="singer">
+                <p id="song-title">I'm with you</p>
+                <p class="silver" id="song-artist">Red Hot Chili Peppers</p>
+              </div>
+            </div>
+
+            <div class="player-controls">
+              <div class="time-box">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" min="0" max="100">
+                <span id="duration">0:00</span>
+              </div>
+              <div class="control-buttons">
+                <ion-icon name="play-skip-back" class="ctrl-btn" id="prev"></ion-icon>
+                <div class="play-btn-circle" id="play-pause">
+                  <ion-icon name="play" id="play-icon"></ion-icon>
+                </div>
+                <ion-icon name="play-skip-forward" class="ctrl-btn" id="next"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          <audio id="audio-player"></audio>
+        </div>
+
+        <div class="vidtw" id="playlist-container">
+          <!-- Javascript will populate this or we keep hardcoded id's if preferred, 
+             but for now let's keep the structure ready for JS interaction -->
+          <div class="vidtwoo playlist-item" data-index="0">
+            <img class="videoimg" src="img/music-with-you.jpg" alt="">
+            <p class="show">I'm with you</p>
+          </div>
+
+          <div class="vidtwoo playlist-item" data-index="1">
+            <img class="videoimg" src="img/music-butter.jpg" alt="">
+            <p class="show">Butter</p>
+          </div>
+
+          <div class="vidtwoo playlist-item" data-index="2">
+            <img class="videoimg" src="img/music-back-together.jpg" alt="">
+            <p class="show">Back Together</p>
+          </div>
+
+          <div class="vidtwoo playlist-item" data-index="3">
+            <img class="videoimg" src="img/music-unwind.jpg" alt="">
+            <p class="show">Unwind</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="bottom"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
