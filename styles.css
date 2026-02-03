@@ -328,6 +328,21 @@ img {
 
 /* Responsive Design Media Queries */
 
+/* Responsive Design Media Queries */
+
+@media screen and (max-width: 1024px) {
+  .menus {
+    max-width: 100%;
+    /* Use full width on tablets/mobile */
+  }
+
+  .leftmenu {
+    width: 60px;
+    /* Smaller icon width */
+    font-size: 24px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .obj {
     padding: 15px;
@@ -338,30 +353,54 @@ img {
     width: 100%;
     justify-content: center;
     text-align: center;
+    margin-bottom: 10px;
   }
 
   .weather {
-    margin-bottom: 20px;
+    justify-content: space-around;
+    /* Distribute weather items evenly */
+  }
+
+  .head {
+    flex-direction: column;
+    align-items: center;
   }
 
   .data,
   .time {
     text-align: center;
-    width: 100%;
-    padding: 0;
+    width: auto;
+    /* Auto width to fit content */
+    padding: 0 10px;
   }
 
   .time {
     font-size: 40px;
   }
 
-  .vidtw {
-    width: 100%;
-    margin-top: 20px;
-  }
-
+  /* Music Player and Playlist stacking */
   .menuss {
     width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+    border-right: none;
+    /* Remove border if any */
+  }
+
+  .vidtw {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .leftmenu {
+    display: none;
+    /* Hide side icons on mobile to save space */
+  }
+
+  .menus {
+    width: 100%;
+    /* Ensure content takes full width */
   }
 }
 
@@ -370,74 +409,114 @@ img {
     padding: 15px;
   }
 
+  /* Optimize Weather display for small screens */
   .weather {
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    /* Prevent wrapping if possible */
+    overflow-x: auto;
+    /* Scroll if too small */
+    justify-content: flex-start;
+    gap: 15px;
   }
 
   .mon,
   .tue {
+    flex-shrink: 0;
     width: auto;
-    padding: 5px;
+    min-width: 60px;
   }
 
-  .leftmenu {
-    display: none;
-    /* Hide left icon on small screens to save space, or reduce size */
-  }
-
-  .menus {
-    width: 100%;
-  }
-
+  /* Navigation Links */
   .links {
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    /* Space for scrollbar */
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .link {
-    padding: 10px 5px;
-    font-size: 14px;
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 13px;
   }
 
+  /* Menu Items */
   .menu {
-    padding: 15px;
+    padding: 15px 10px;
+    /* Reduced side padding */
   }
 
+  /* Video Cards */
   .vid {
-    width: 180px;
+    width: 160px;
     /* Smaller cards for mobile */
   }
 
   .videoimg {
     height: 100px;
   }
+
+  .show {
+    font-size: 14px;
+    /* Readable text size */
+  }
+
+  .timetable {
+    font-size: 11px;
+  }
+
+  /* Music Player adjustments */
+  .songimg {
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  .singer {
+    width: calc(100% - 70px);
+  }
+
+  .play-btn-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vidtwoo {
+    width: 140px;
+    /* Playlist items width */
+  }
 }
 
 @media screen and (max-width: 390px) {
 
-  /* Specific for 39x (iPhone 12/13/14 widths) */
+  /* Ultra small screens (iPhone SE, etc) */
   .time {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .bigger {
-    font-size: 20px;
-  }
-
-  .mon p,
-  .tue p {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .obj {
-    padding: 10px;
+    padding: 5px;
   }
 
   .vid {
-    width: 160px;
+    width: 140px;
   }
 
   .vidtwoo {
-    width: 130px;
+    width: 120px;
+  }
+
+  .links {
+    gap: 5px;
+  }
+
+  .link {
+    padding: 6px 12px;
   }
 }
 
